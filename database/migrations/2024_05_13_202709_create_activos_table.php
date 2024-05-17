@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->integer('refer')->unsigned();
-            $table->integer('codigo')->unsigned()->unique();
+            $table->integer('codigo')->unsigned();
             $table->text('descripciondelbien')->charset('utf8mb4');
             $table->decimal('valoractuallibros', 14, 4)->nullable()->default(0.0);
             $table->date('fechacompra')->nullable();
