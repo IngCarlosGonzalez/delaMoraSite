@@ -12,16 +12,21 @@ class Registro extends Model
 
     protected $guarded = [];
 
-    /**
-     * The primary key associated with the table.
-     *
-     * @var string
-     */
-    protected $primaryKey = ['fecha', 'empnum'];
-
     public function lafecha(): BelongsTo
     {
         return $this->belongsTo(Fecha::class, 'fecha');
     }
 
+    public function nombre(): BelongsTo
+    {
+        return $this->belongsTo(Empleado::class, 'empnum');
+    }
+
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
+    
 }

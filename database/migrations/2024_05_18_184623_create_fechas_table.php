@@ -12,9 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('fechas', function (Blueprint $table) {
+            $table->id();        
             $table->date('fecha');
             $table->integer('datos')->default(0);
-            $table->primary('fecha');
+            $table->index('fecha');
             $table->timestamps();
         });
     }

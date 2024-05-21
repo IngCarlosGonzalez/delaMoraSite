@@ -12,13 +12,6 @@ class Fecha extends Model
 
     protected $guarded = [];
 
-    /**
-     * The primary key associated with the table.
-     *
-     * @var string
-     */
-    protected $primaryKey = 'fecha';
-
     public function registros(): HasMany
     {
         return $this->hasMany(Registro::class, 'fecha');

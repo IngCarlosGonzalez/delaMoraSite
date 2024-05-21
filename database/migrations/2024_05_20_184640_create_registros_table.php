@@ -12,14 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('registros', function (Blueprint $table) {
+            $table->id();
             $table->date('fecha');
             $table->integer('empnum')->unsigned()->nullable();
+            $table->string('nombre', 50)->nullable();
             $table->time('entrada')->nullable();
             $table->time('salida')->nullable();
-            $table->string('nombre', 50)->nullable();
-            $table->primary(['fecha', 'empnum']);
             $table->foreign('fecha')->references('fecha')->on('fechas');
+            $table->index('fecha');
             $table->index('empnum');
+            $table->index(['fecha', 'empnum']);
         });
     }
 

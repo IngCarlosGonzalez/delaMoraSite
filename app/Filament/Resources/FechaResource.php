@@ -13,6 +13,7 @@ use Filament\Support\Enums\FontFamily;
 use Filament\Support\Enums\FontWeight;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\DatePicker;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\FechaResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -39,14 +40,13 @@ class FechaResource extends Resource
 
                     ->schema([
 
-                        TextInput::make('fecha')
-                        ->label('Fecha de Asistencias')
-                        ->autofocus()
-                        ->required()
-                        ->mask('9999-99-99')
-                        ->length(10)
-                        ->placeholder('AAAA-MM-DD')
-                        ->live(debounce: 2000),
+                        DatePicker::make('fecha')
+                            ->label('Fecha de Asistencias')
+                            ->autofocus()
+                            ->required()
+                            ->format('Y/m/d')
+                            ->native(false)
+                            ->live(debounce: 2000),
 
                     ])
 
@@ -65,9 +65,9 @@ class FechaResource extends Resource
             ->columns([
 
                 TextColumn::make('fecha')
-                    ->label('FECHA')
+                    ->label('Fecha Cargada')
                     ->color('naranja')
-                    ->date($format = 'yyyy-mm-dd')
+                    ->date(format: 'd/m/Y')
                     ->weight(FontWeight::Bold)
                     ->size(TextColumn\TextColumnSize::Large)
                     ->fontFamily(FontFamily::Mono)
@@ -81,14 +81,12 @@ class FechaResource extends Resource
 
                 TextColumn::make('created_at')
                     ->label('Registrada')
-                    ->dateTime()
-                    ->sortable()
+                    ->dateTime(format: 'd/m/Y H:i')
                     ->wrap(),
 
                 TextColumn::make('updated_at')
                     ->label('Cargada')
-                    ->dateTime()
-                    ->sortable()
+                    ->dateTime(format: 'd/m/Y H:i')
                     ->wrap(),
             ])
             ->filters([

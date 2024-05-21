@@ -26,4 +26,9 @@ class Empleado extends Model
      */
     public $incrementing = false;
 
+    public function registros(): HasMany
+    {
+        return $this->hasMany(Registro::class, 'empnum');
+    }
+
 }
