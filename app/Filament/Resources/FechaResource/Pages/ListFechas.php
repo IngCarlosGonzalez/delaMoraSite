@@ -3,7 +3,6 @@
 namespace App\Filament\Resources\FechaResource\Pages;
 
 use App\Filament\Resources\FechaResource;
-use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
 
 class ListFechas extends ListRecords
@@ -13,8 +12,8 @@ class ListFechas extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make()
-                ->createAnother(false),
+            /* Actions\CreateAction::make()
+                ->createAnother(false), */
         ];
     }
     

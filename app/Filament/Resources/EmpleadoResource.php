@@ -23,10 +23,10 @@ class EmpleadoResource extends Resource
 
     protected static ?string $model = Empleado::class;
     protected static ?string $modelLabel = 'Empleado';
-    protected static ?string $pluralModelLabel = 'Empleados';
-    protected static ?string $navigationLabel = 'Empleados';
+    protected static ?string $pluralModelLabel = 'Personas';
+    protected static ?string $navigationLabel = 'Nombres';
     protected static ?string $navigationIcon = 'heroicon-o-user';
-    protected static ?string $navigationGroup = 'PERSONAL';
+    protected static ?string $navigationGroup = 'ASISTENCIA';
     protected static ?int $navigationSort = 1; 
 
     public static function form(Form $form): Form

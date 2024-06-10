@@ -17,11 +17,6 @@ class Registro extends Model
         return $this->belongsTo(Fecha::class, 'fecha');
     }
 
-    public function nombre(): BelongsTo
-    {
-        return $this->belongsTo(Empleado::class, 'empnum');
-    }
-
     /**
      * Indicates if the model should be timestamped.
      *

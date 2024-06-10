@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('nombre', 50)->nullable();
             $table->time('entrada')->nullable();
             $table->time('salida')->nullable();
-            $table->foreign('fecha')->references('fecha')->on('fechas');
             $table->index('fecha');
             $table->index('empnum');
             $table->index(['fecha', 'empnum']);

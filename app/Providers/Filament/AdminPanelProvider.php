@@ -53,7 +53,7 @@ class AdminPanelProvider extends PanelProvider
                 NavigationGroup::make()
                     ->label('ACTIVOS'),
                 NavigationGroup::make()
-                    ->label('PERSONAL'),
+                    ->label('ASISTENCIA'),
             ])
             ->middleware([
                 EncryptCookies::class,

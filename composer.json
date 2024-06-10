@@ -6,12 +6,15 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
+        "eightynine/filament-excel-import": "^3.0",
         "filament/filament": "^3.2",
         "laravel/framework": "^11.0",
         "laravel/jetstream": "^5.1",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.0",
+        "malzariey/filament-daterangepicker-filter": "^2.7",
+        "pxlrbt/filament-excel": "^2.3",
         "spatie/laravel-permission": "^6.7"
     },
     "require-dev": {

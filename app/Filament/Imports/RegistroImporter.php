@@ -2,7 +2,6 @@
 
 namespace App\Filament\Imports;
 
-use App\Models\Empleado;
 use App\Models\Registro;
 use Filament\Actions\Imports\Importer;
 use Filament\Actions\Imports\ImportColumn;
@@ -28,7 +27,6 @@ class RegistroImporter extends Importer
                 ->rules(['required']),
             ImportColumn::make('nombre')
                 ->label('nombre')
-                ->relationship(resolveUsing: 'empnum')
                 ->example(''),
             ImportColumn::make('entrada')
                 ->castStateUsing(function (string $state): ?string {
@@ -59,11 +57,6 @@ class RegistroImporter extends Importer
 
     public function resolveRecord(): ?Registro
     {
-        // return Registro::firstOrNew([
-        //     // Update existing records, matching them by `$this->data['column_name']`
-        //     'email' => $this->data['email'],
-        // ]);
-
         return new Registro();
     }
 

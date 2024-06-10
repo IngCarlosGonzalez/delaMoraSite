@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources\RegistroResource\Pages;
 
-use App\Filament\Resources\RegistroResource;
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
+use App\Filament\Resources\RegistroResource;
+use EightyNine\ExcelImport\ExcelImportAction;
 
 class ListRegistros extends ListRecords
 {
@@ -13,7 +14,13 @@ class ListRegistros extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            
+            ExcelImportAction::make()
+                ->color("info"),
+
+            Actions\CreateAction::make()
+                ->color("gray"),
+                
         ];
     }
 }
