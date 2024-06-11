@@ -13,6 +13,7 @@ hosts:
 
 tasks:
   deploy:
+    - deploy:unlock
     - deploy:prepare
     - deploy:vendors
     - artisan:storage:link
@@ -31,3 +32,4 @@ tasks:
 
 after:
   deploy:failed: deploy:unlock
+

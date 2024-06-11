@@ -51,9 +51,9 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->navigationGroups([
                 NavigationGroup::make()
-                    ->label('ACTIVOS'),
-                NavigationGroup::make()
                     ->label('ASISTENCIA'),
+                NavigationGroup::make()
+                    ->label('BIENES'),
             ])
             ->middleware([
                 EncryptCookies::class,
